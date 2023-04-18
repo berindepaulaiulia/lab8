@@ -65,6 +65,8 @@ function clearOutputCookieValue() {
   <code id="cookie-value"></code>
 </div>
 
+Ex. 3
+
 <script>
 function doOnce() {
   if (
@@ -96,6 +98,35 @@ function clearOutputDoOnce() {
 
 <div>
   <code id="do-once"></code>
+</div>
+
+Ex.4
+
+<script>
+function resetOnce() {
+  // Note that we are setting `SameSite=None;` in this example because the example
+  // needs to work cross-origin.
+  // It is more common not to set the `SameSite` attribute, which results in the default,
+  // and more secure, value of `SameSite=Lax;`
+  document.cookie =
+    "doSomethingOnlyOnce=; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=None; Secure";
+
+  const output = document.getElementById("reset-once");
+  output.textContent = "> Reset!";
+}
+
+function clearOutputResetOnce() {
+  const output = document.getElementById("reset-once");
+  output.textContent = "";
+}
+</script>
+
+<button onclick="resetOnce()">Reset only once cookie</button>
+
+<button onclick="clearOutputResetOnce()">Clear</button>
+
+<div>
+  <code id="reset-once"></code>
 </div>
 
 # Header 1
