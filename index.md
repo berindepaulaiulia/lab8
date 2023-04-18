@@ -21,6 +21,14 @@ function clearOutputCookies() {
 }
 </script>
 
+<button onclick="showCookies()">Show cookies</button>
+
+<button onclick="clearOutputCookies()">Clear</button>
+
+<div>
+  <code id="cookies"></code>
+</div>
+
 [Link to another page](./another-page.html).
 
 There should be whitespace between paragraphs.
